@@ -16,8 +16,11 @@ public class OrderServiceApplication {
     }
 
 
+
+
+
     /**
-     * @Description 生成一个负载均衡的bean
+     * @Description 生成一个负载均衡的bean   使用feign之后不要使用这个，这个属于ribbon
      * @param
      * @return org.springframework.web.client.RestTemplate
     **/

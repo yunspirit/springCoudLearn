@@ -17,14 +17,17 @@ import java.util.UUID;
 public class ProductOrderServiceImpl implements ProductOrderService {
 
 
+    //feign使用
     @Autowired
     private ProductClient productClient;
 
+
+    //ribbon使用
     @Autowired
     private RestTemplate restTemplate;
 
 
-    //如果不使用ProductClient，则使用RestTemplate直接访问URL进行调用
+    //ribbon方式  使用RestTemplate直接访问URL进行调用
     @Override
     public ProductOrder save2(int userId, int productId){
 
@@ -47,6 +50,7 @@ public class ProductOrderServiceImpl implements ProductOrderService {
 
 
 
+    //feign方式调用
     @Override
     public ProductOrder save(int userId, int productId) {
 

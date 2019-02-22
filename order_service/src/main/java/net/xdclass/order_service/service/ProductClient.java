@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * 商品服务客户端
+ * 商品服务客户端   feign的名称
  */
+//被调用的接口名称
 @FeignClient(name = "product-service")
 public interface ProductClient {
 

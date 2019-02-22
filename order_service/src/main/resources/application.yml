@@ -19,7 +19,7 @@ product-service:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 
-#修改调用超时时间
+#修改调用超时时间  生产者响应时间周期过长
 feign:
   client:
     config:
