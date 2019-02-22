@@ -16,6 +16,11 @@ public class OrderServiceApplication {
     }
 
 
+    /**
+     * @Description 生成一个负载均衡的bean
+     * @param
+     * @return org.springframework.web.client.RestTemplate
+    **/
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {

@@ -1,4 +1,4 @@
-package net.xdclass.order_service.domain;
+ package net.xdclass.order_service.domain;
 
 import java.io.Serializable;
 import java.util.Date;

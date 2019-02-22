@@ -17,4 +17,7 @@ public interface ProductOrderService {
      ProductOrder save(int userId, int productId);
 
 
+     ProductOrder save2(int userId, int productId);
+
+
 }
