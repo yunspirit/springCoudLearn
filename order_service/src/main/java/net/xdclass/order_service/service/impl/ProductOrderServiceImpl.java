@@ -5,6 +5,8 @@ import net.xdclass.order_service.domain.ProductOrder;
 import net.xdclass.order_service.service.ProductClient;
 import net.xdclass.order_service.service.ProductOrderService;
 import net.xdclass.order_service.utils.JsonUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -25,6 +27,9 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     //ribbon使用
     @Autowired
     private RestTemplate restTemplate;
+
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
     //ribbon方式  使用RestTemplate直接访问URL进行调用
@@ -56,6 +61,8 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     //feign方式调用
     @Override
     public ProductOrder save(int userId, int productId) {
+
+        logger.info("service save order");
 
         if(userId == 1){
             return null;

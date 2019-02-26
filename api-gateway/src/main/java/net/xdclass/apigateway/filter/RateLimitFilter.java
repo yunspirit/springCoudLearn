@@ -31,6 +31,8 @@ public class RateLimitFilter extends ZuulFilter {
         return -4;
     }
 
+
+    //这儿只对order服务限流
     @Override
     public boolean shouldFilter() {
 

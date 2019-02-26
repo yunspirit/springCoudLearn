@@ -2,6 +2,8 @@ package net.xdclass.product_service.service.impl;
 
 import net.xdclass.product_service.domain.Product;
 import net.xdclass.product_service.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -10,6 +12,8 @@ import java.util.*;
 public class ProductServiceImpl implements ProductService {
 
     private static final Map<Integer,Product> daoMap = new HashMap<>();
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     static {
 
@@ -44,6 +48,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findById(int id) {
+        logger.info("service findById");
         return daoMap.get(id);
     }
 }
