@@ -10,6 +10,12 @@ eureka:
 
 #服务的名称
 spring:
+  #   配置redis
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000
   application:
     name: order-service
 
@@ -21,8 +27,42 @@ product-service:
 
 #修改调用超时时间  生产者响应时间周期过长
 feign:
+  hystrix:
+    enabled: true    #开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
   client:
     config:
       default:
-        connectTimeout: 2000
+        connectTimeout: 2000   #即使此处设置2s，但是hystrix已经定义好了超时时间，此处没有效果
         readTimeout: 2000
+
+
+
+
+
+
+#  execution.timeout.enabled 是否开启超时限制 （一定不要禁用）
+#禁用hystrix超时之后，超时时间以feign的超时时间为准
+#hystrix:
+#  command:
+#    default:
+#     execution:
+#       timeout:
+#         enabled:false
+
+
+#设置hystrix使用隔离线程的超时时间
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 4000
+
+
+# hystrix监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

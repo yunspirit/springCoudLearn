@@ -31,9 +31,12 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     @Override
     public ProductOrder save2(int userId, int productId){
 
-        //订单服务调用商品服务
-        //Object obj = restTemplate.getForObject("http://product-service/api/v1/product/find?id="+productId,Object.class);
 
+
+        /**
+         * //订单服务调用商品服务
+         * //Object obj = restTemplate.getForObject("http://product-service/api/v1/product/find?id="+productId,Object.class);
+         */
         Map<String,Object> productMap = restTemplate.getForObject("http://product-service/api/v1/product/find?id="+productId,Map.class);
         //System.out.println(obj);
 
@@ -54,6 +57,10 @@ public class ProductOrderServiceImpl implements ProductOrderService {
     @Override
     public ProductOrder save(int userId, int productId) {
 
+        if(userId == 1){
+            return null;
+        }
+
         String response = productClient.findById(productId);
 
         JsonNode  jsonNode = JsonUtils.str2JsonNode(response);
@@ -66,6 +73,13 @@ public class ProductOrderServiceImpl implements ProductOrderService {
         productOrder.setPrice(Integer.parseInt(jsonNode.get("price").toString()));
         return productOrder;
     }
+
+
+
+
+
+
+
 
 
 
