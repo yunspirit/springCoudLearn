@@ -1,1 +1,24 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/cloudwill/spirngcloudconfigserver.git
+          username: cloudwill@163.com
+          password: yq15900217499
+#     git超时问题
+          timeout: 5
+          default-label: master
 
+
+
+server:
+  port: 9000
+
+#指定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

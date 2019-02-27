@@ -5,6 +5,7 @@ import net.xdclass.product_service.service.ProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,12 +13,16 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/api/v1/product")
+@RefreshScope
 public class ProductController {
 
 
 
     @Value("${server.port}")
     private String port;
+
+    @Value("${env}")
+    private String  env;
 
     @Autowired
     private ProductService productService;

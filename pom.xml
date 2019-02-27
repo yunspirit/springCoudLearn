@@ -15,6 +15,7 @@
         <module>product_service</module>
         <module>order_service</module>
         <module>api-gateway</module>
+        <module>docker-demo</module>
     </modules>
     
 </project>

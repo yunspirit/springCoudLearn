@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="config-server" />
+        <module name="docker-demo" />
         <module name="eureka_server" />
         <module name="order_service" />
         <module name="product_service" />
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.8" />
       <module name="config-server" target="1.8" />
+      <module name="docker-demo" target="1.8" />
       <module name="eureka_server" target="1.8" />
       <module name="order_service" target="1.8" />
       <module name="product_service" target="1.8" />
@@ -28,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="docker-demo" options="-parameters" />
       <module name="eureka_server" options="-parameters" />
       <module name="order_service" options="-parameters" />
       <module name="product_service" options="-parameters" />
